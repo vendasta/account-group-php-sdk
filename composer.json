@@ -10,8 +10,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Vendasta\\AccountGroup\\V1\\": "./src",
-      "AccountGroup\\V1\\": "./generated/grpc/Accountgroup/V1"
+      "Vendasta\\AccountGroup\\V1\\": "src/",
+      "AccountGroup\\V1\\": "generated/grpc/Accountgroup/V1/"
     }
   }
 }
