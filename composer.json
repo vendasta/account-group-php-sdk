@@ -1,0 +1,17 @@
+{
+  "name": "vendasta/accountgroup",
+  "description": "Vendasta account group library for PHP",
+  "type": "library",
+  "require": {
+    "grpc/grpc": "^v1.1.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "mdanter/ecc": "^0.5.0",
+    "vendasta/vax": "^1.2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vendasta\\AccountGroup\\V1\\": "./src",
+      "AccountGroup\\V1\\": "./generated/grpc/Accountgroup/V1"
+    }
+  }
+}
