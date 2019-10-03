@@ -6,14 +6,14 @@
     "grpc/grpc": "^v1.1.0",
     "guzzlehttp/guzzle": "^6.3",
     "mdanter/ecc": "^0.5.0",
-    "vendasta/vax": "^1.2.0"
-
+    "vendasta/vax": "^1.2.0",
+    "google/protobuf": "^3.9.2"
   },
   "autoload": {
     "psr-4": {
       "Vendasta\\AccountGroup\\V1\\": "src/",
       "Accountgroup\\V1\\": "generated/grpc/Accountgroup/V1/",
-      "GPBMetadata\\AccountGroup\\V1\\": "generated/grpc/GPBMetadata/AccountGroup/V1/"
+      "GPBMetadata\\AccountGroup\\V1\\": "generated/grpc/GPBMetadata/AccountGroup/V1/",
     }
   }
 }
