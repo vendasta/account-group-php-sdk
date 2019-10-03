@@ -7,7 +7,8 @@
     "guzzlehttp/guzzle": "^6.3",
     "mdanter/ecc": "^0.5.0",
     "vendasta/vax": "^1.2.0",
-    "google/protobuf": "^3.9.2"
+    "google/protobuf": "^3.9.2",
+    "google/common-protos": "^1.1"
   },
   "autoload": {
     "psr-4": {
