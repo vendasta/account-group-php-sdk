@@ -16,5 +16,8 @@
       "Accountgroup\\V1\\": "generated/grpc/Accountgroup/V1/",
       "GPBMetadata\\AccountGroup\\V1\\": "generated/grpc/GPBMetadata/AccountGroup/V1/"
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
   }
 }
