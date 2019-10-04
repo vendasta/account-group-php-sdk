@@ -10,9 +10,6 @@ class CreateAccountGroupRequest {
     private $account_group_nap = null;
     private $updateOperations = null;
 
-    public function __construct(){
-    }
-
     public function setAccountGroupNap(AccountGroupLocation $business) {
         $this->account_group_nap = $business;
     }
@@ -31,6 +28,37 @@ class CreateAccountGroupRequest {
 
     public function getUpdateOperations() {
         return $this->updateOperations;
+    }
+
+    public function toCreateAccountGroupRequest(): \Accountgroup\V1\CreateAccountGroupRequest{
+
+        $createRequest = new \Accountgroup\V1\CreateAccountGroupRequest();
+
+        $accountGroupNap = new \Accountgroup\V1\AccountGroupLocation();
+
+        $reqNap = $this->getAccountGroupNap();
+        $accountGroupNap->setCompanyName($reqNap->getCompanyName());
+        $accountGroupNap->setAddress($reqNap->getAddress());
+        $accountGroupNap->setAddress2($reqNap->getAddress2());
+        $accountGroupNap->setCity($reqNap->getCity());
+        $accountGroupNap->setState($reqNap->getState());
+        $accountGroupNap->setZip($reqNap->getZip());
+        $accountGroupNap->setCountry($reqNap->getCountry());
+        $accountGroupNap->setWebsite($reqNap->getWebsite());
+        $workNumber = $reqNap->getWorkNumber();
+        $accountGroupNap->setWorkNumber($workNumber);
+        $callTrackingNumber = $reqNap->getCallTrackingNumber();
+        $accountGroupNap->setCallTrackingNumber($callTrackingNumber);
+        $location = $reqNap->getLocation();
+        $accountGroupNap->setLocation($location);
+        $accountGroupNap->setTimezone($reqNap->getTimezone());
+        $accountGroupNap->setServiceAreaBusiness($reqNap->getServiceAreaBusiness());
+
+        $createRequest->setAccountGroupNap($accountGroupNap);
+        $updateOperations = $this->getUpdateOperations();
+        $createRequest->setUpdateOperations($updateOperations);
+        return $createRequest;
+
     }
     
 }
