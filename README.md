@@ -54,7 +54,7 @@ $location->setCity("<city>>");
 $location->setState("<state>");
 $location->setCountry("<country>");
 $location->setZip("<zip>");
-$workNumber = array(<phone_number>");
+$workNumber = array("<phone_number>");
 $location->setWorkNumber($workNumber);
 
 $createReq->setAccountGroupNap($location);
