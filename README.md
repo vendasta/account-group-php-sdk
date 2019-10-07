@@ -41,23 +41,24 @@ To instantiate the client:
 
 ```php
 $environment = "DEMO"; // "PROD" for production environment
-putenv("VENDASTA_APPLICATION_CREDENTIALS=/credentials/path/service-account.json");
-
 $client = new Vendasta\AccountGroup\V1\AccountGroupServiceClient($environment);
-$createReq = new Vendasta\AccountGroup\V1\CreateAccountGroupRequest();
+```
 
+## Creating account groups
+```php
+$createReq = new Vendasta\AccountGroup\V1\CreateAccountGroupRequest();
 $location = new Vendasta\AccountGroup\V1\AccountGroupLocation();
-$location->setCompanyName("Company Name");
-$location->setAddress("123 fake street");
-$location->setCity("New York");
-$location->setCountry("US");
-$location->setState("NY");
-$location->setZip("12345");
-$workNumber = array("123456789");
+$location->setCompanyName("<business_name>");
+$location->setAddress("<address>");
+$location->setCity("<city>>");
+$location->setState("<state>");
+$location->setCountry("<country>");
+$location->setZip("<zip>");
+$workNumber = array(<phone_number>");
 $location->setWorkNumber($workNumber);
 
 $createReq->setAccountGroupNap($location);
 
-$createReq->setPartnerId("MYID");
+$createReq->setPartnerId("<partner_id>");
 $resp = $client->Create($createReq);
 ```
