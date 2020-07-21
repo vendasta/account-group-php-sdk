@@ -58,12 +58,6 @@ Notice that the production environment will be set to DEMO if it is not specifie
 
 ## Creating account groups
 ```php
-$environment = getenv("PRODUCTION_ENVIRONMENT");
-if ($environment == null) {
-    $environment = "DEMO";
-}
-$client = new Vendasta\AccountGroup\V1\AccountGroupServiceClient($environment);
-
 $createReq = new Vendasta\AccountGroup\V1\CreateAccountGroupRequest();
 $location = new Vendasta\AccountGroup\V1\AccountGroupLocation();
 $location->setCompanyName("<business_name>");
