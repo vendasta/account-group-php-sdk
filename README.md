@@ -37,12 +37,24 @@ export VENDASTA_APPLICATION_CREDENTIALS=<path to credentials.json>
 
 It is highly recommended that you use a singleton client instance. Each client initilization will open it's own connection, therefore using a singleton results in reusing a connection, saving time and resources.
 
+Set an environment variable for the production environment:
+
+```bash
+export PRODUCTION_ENVIRONMENT=<DEMO or PROD> 
+```
+
 To instantiate the client:
 
 ```php
-$environment = "DEMO"; // "PROD" for production environment
+$environment = getenv("PRODUCTION_ENVIRONMENT");
+if ($environment == null) {
+    $environment = "DEMO";
+}
+
 $client = new Vendasta\AccountGroup\V1\AccountGroupServiceClient($environment);
 ```
+
+Notice that the production environment will be set to DEMO if it is not specified.
 
 ## Creating account groups
 ```php
@@ -62,3 +74,5 @@ $createReq->setAccountGroupNap($location);
 $createReq->setPartnerId("<partner_id>");
 $resp = $client->Create($createReq);
 ```
+
+
