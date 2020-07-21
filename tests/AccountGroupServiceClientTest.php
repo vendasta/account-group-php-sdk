@@ -10,7 +10,11 @@ class AccountGroupServiceClientTest extends TestCase
 {
     public function testCreateHappyPath()
     {
-        $environment = "DEMO";
+        $environment = getenv("environment");
+        if ($environment == null) {
+            $environment = "DEMO";
+        }
+
         $client = new AccountGroupServiceClient($environment);
 
         $createReq = new CreateAccountGroupRequest();
