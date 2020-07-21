@@ -8,29 +8,28 @@ use Vendasta\AccountGroup\V1\CreateAccountGroupRequest;
 
 class AccountGroupServiceClientTest extends TestCase
 {
-    public function testHelloWorld() {
-
+    public function testCreateHappyPath()
+    {
         $environment = "DEMO";
         $client = new AccountGroupServiceClient($environment);
 
         $createReq = new CreateAccountGroupRequest();
         $location = new AccountGroupLocation();
-        $location->setCompanyName("Corey's NYC Bagel & Deli");
-        $location->setAddress("515 North Dearborn Street");
+        $location->setCompanyName("Test Company");
+        $location->setAddress("123 Street Name");
         $location->setCity("Chicago");
         $location->setState("IL");
         $location->setCountry("US");
-        $location->setZip("60654");
-        $workNumber = array("(312) 923-9999");
+        $location->setZip("88888");
+        $workNumber = array("(999) 999-9999");
         $location->setWorkNumber($workNumber);
-
         $createReq->setAccountGroupNap($location);
+        $createReq->setPartnerId("PID");
 
-        $createReq->setPartnerId("ABC");
         $resp = $client->Create($createReq);
-       self::assertNotEmpty(
-           $resp->getAccountGroupId(),
-           'actual value does not equal expected value',
-       );
-   }
+        self::assertNotEmpty(
+            $resp->getAccountGroupId(),
+            'expected account group ID returned',
+        );
+    }
 }
