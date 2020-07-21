@@ -10,7 +10,7 @@ class AccountGroupServiceClientTest extends TestCase
 {
     public function testCreateHappyPath()
     {
-        $environment = getenv("environment");
+        $environment = getenv("PRODUCTION_ENVIRONMENT");
         if ($environment == null) {
             $environment = "DEMO";
         }
